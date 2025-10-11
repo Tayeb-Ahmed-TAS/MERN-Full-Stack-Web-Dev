@@ -135,3 +135,44 @@ oldDiv.removeChild(button);
 // Remove the element itself
 button.remove();
 ```
+
+# Stop Event Bubbling
+
+Event bubbling is a mechanism in the DOM where an event starts from the most specific element (the target) and then flows upward to its ancestors. This means that if you click on a button inside a div, the click event will first be handled by the button, then by the div, and so on up to the document root.
+
+To stop event bubbling, you can use the `event.stopPropagation()` method within an event handler. This method prevents the event from propagating (bubbling up) to parent elements.
+
+## Example
+
+```html
+
+<div>
+  <ul></ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+```
+
+```javascript
+const div = document.querySelector("div");
+const ul = document.querySelector("ul");
+const liItems = document.querySelectorAll("li");
+
+div.addEventListener("click", () => {
+  console.log("Div clicked");
+});
+
+ul.addEventListener("click", (event) => {
+  event.stopPropagation(); // Stops the event from bubbling up to the div
+  console.log("UL clicked");
+});
+
+for (li of liItems) {
+  li.addEventListener("click", (event) => {
+    event.stopPropagation(); // Stops the event from bubbling up to the ul and div
+    console.log("LI clicked");
+  });
+}
+```
