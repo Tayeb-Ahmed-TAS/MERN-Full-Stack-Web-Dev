@@ -16,7 +16,7 @@ You can select elements using various methods:
 - `document.querySelector(selector)`: Selects the first element that matches a CSS selector.
 - `document.querySelectorAll(selector)`: Selects all elements that match a CSS selector.
 
-### Example:
+### Example
 
 ```javascript
 // Select an element by ID
@@ -119,7 +119,7 @@ button.textContent = "Click Me";
 oldDiv.append(button);
 ```
 
-### Note: `append` is mostly used than `appendChild` as it can append multiple nodes and strings, while `appendChild` can only append a single node.
+### Note: `append` is mostly used than `appendChild` as it can append multiple nodes and strings, while `appendChild` can only append a single node
 
 ### Removing Elements
 
