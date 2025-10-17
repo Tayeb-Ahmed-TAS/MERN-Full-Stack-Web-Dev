@@ -29,15 +29,28 @@ div {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 50px;
-    overflow: auto;
 }
 
 ul {
     padding: 40px 20px 0px 40px;
     width: 100%;
+    max-height: 75%;
     list-style: decimal;
     overflow-y: auto !important;
     margin-top: 20px;
+}
+
+ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: linear-gradient(60deg, #45a049, #a52a2a);
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #45a049;
 }
 
 li {
